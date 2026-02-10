@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Danyal Tariq — Full Stack Engineer",
+  title: "Danyal Tariq — Software Engineer",
   description:
-    "Software Engineer specializing in Full-Stack Development, System Design, and Real-Time Applications. Building production-grade solutions with modern web technologies.",
+    "Full-stack software engineer with 5+ years of experience in React/Next.js, Node.js, cloud-native architecture, and high-performance C# systems.",
   keywords: [
     "Danyal Tariq",
     "Full Stack Engineer",
@@ -30,18 +30,18 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Danyal Tariq" }],
   openGraph: {
-    title: "Danyal Tariq — Full Stack Engineer",
+    title: "Danyal Tariq — Software Engineer",
     description:
-      "Software Engineer specializing in Full-Stack Development, System Design, and Real-Time Applications.",
+      "Full-stack software engineer with 5+ years of experience in React/Next.js, Node.js, and cloud-native architecture.",
     url: "https://danyaltariqdev.vercel.app",
     siteName: "Danyal Tariq Portfolio",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Danyal Tariq — Full Stack Engineer",
+    title: "Danyal Tariq — Software Engineer",
     description:
-      "Software Engineer specializing in Full-Stack Development, System Design, and Real-Time Applications.",
+      "Full-stack software engineer with 5+ years of experience in React/Next.js, Node.js, and cloud-native architecture.",
   },
   robots: "index, follow",
 };

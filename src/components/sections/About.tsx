@@ -2,7 +2,7 @@
 
 import SectionWrapper from "@/components/SectionWrapper";
 import { siteConfig } from "@/lib/constants";
-import { MapPin, Building2, Target, Gamepad2 } from "lucide-react";
+import { MapPin, Building2, Target, Calendar } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
@@ -11,6 +11,11 @@ export default function About() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const highlights = [
+    {
+      icon: Calendar,
+      label: "Experience",
+      value: "5+ Years",
+    },
     {
       icon: Building2,
       label: "Company",
@@ -25,11 +30,6 @@ export default function About() {
       icon: Target,
       label: "2026 Goal",
       value: "Master System Design",
-    },
-    {
-      icon: Gamepad2,
-      label: "Fun Fact",
-      value: "RTS Gamer — Red Alert FTW!",
     },
   ];
 
@@ -68,34 +68,50 @@ export default function About() {
               <span className="text-zinc-900 dark:text-white font-medium">
                 Software Engineer
               </span>{" "}
-              based in the{" "}
+              with{" "}
               <span className="text-zinc-900 dark:text-white font-medium">
-                UAE
+                5+ years
+              </span>{" "}
+              of experience, based in{" "}
+              <span className="text-zinc-900 dark:text-white font-medium">
+                Dubai, UAE
               </span>
-              , currently building full-stack solutions at{" "}
+              . Currently building enterprise-grade full-stack solutions at{" "}
               <span className="text-indigo-600 dark:text-indigo-400 font-medium">
                 Phoenix Group
               </span>
-              . I specialize in architecting production-grade applications with
-              modern web technologies.
+              , where I&apos;ve driven 80%+ cost reductions and 99.9% uptime on
+              distributed systems.
             </p>
             <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
-              My expertise spans the entire development lifecycle — from
-              designing scalable system architectures with event-driven patterns
-              and real-time capabilities, to crafting pixel-perfect user
-              interfaces with buttery-smooth interactions.
+              My expertise spans{" "}
+              <span className="text-zinc-900 dark:text-white font-medium">
+                React/Next.js
+              </span>{" "}
+              on the frontend,{" "}
+              <span className="text-zinc-900 dark:text-white font-medium">
+                Node.js microservices
+              </span>{" "}
+              on the backend, and{" "}
+              <span className="text-zinc-900 dark:text-white font-medium">
+                cloud-native architecture
+              </span>{" "}
+              with Docker, Kubernetes, AWS, and Azure. I&apos;ve migrated
+              monoliths to containers, optimized API latency by 35%, and built
+              automation tools saving 15+ hours per week.
             </p>
             <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
-              Beyond web development, I have a passion for{" "}
+              Before web development, I spent years in{" "}
+              <span className="text-zinc-900 dark:text-white font-medium">
+                high-performance C# systems
+              </span>{" "}
+              and{" "}
               <span className="text-zinc-900 dark:text-white font-medium">
                 game development
               </span>{" "}
-              with Unity and exploring{" "}
-              <span className="text-zinc-900 dark:text-white font-medium">
-                AI/ML
-              </span>
-              . When I&apos;m not coding, you&apos;ll find me commanding armies
-              in RTS games or diving deep into system design concepts.
+              with Unity — optimizing build sizes by 80% and reducing CPU usage
+              by 25%. When I&apos;m not coding, you&apos;ll find me commanding
+              armies in RTS games or diving deep into system design.
             </p>
           </motion.div>
 

@@ -1,7 +1,7 @@
 "use client";
 
 import SectionWrapper from "@/components/SectionWrapper";
-import { experience } from "@/lib/constants";
+import { experience, education } from "@/lib/constants";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Briefcase, GraduationCap } from "lucide-react";
@@ -111,28 +111,36 @@ export default function Experience() {
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.5 }}
-            className="relative flex flex-col md:flex-row items-start gap-8 md:flex-row-reverse"
+            transition={{ delay: 0.3 + experience.length * 0.2 }}
+            className={`relative flex flex-col md:flex-row items-start gap-8 ${
+              experience.length % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+            }`}
           >
             {/* Timeline Dot */}
             <div className="absolute left-6 md:left-1/2 w-3 h-3 bg-purple-600 dark:bg-purple-400 rounded-full -translate-x-1.5 md:-translate-x-1.5 ring-4 ring-white dark:ring-zinc-950 z-10 top-8" />
 
-            <div className="ml-16 md:ml-0 md:w-[calc(50%-2rem)] md:pl-8">
+            <div className={`ml-16 md:ml-0 md:w-[calc(50%-2rem)] ${
+              experience.length % 2 === 0 ? "md:pr-8 md:text-right" : "md:pl-8"
+            }`}>
               <div className="p-6 rounded-2xl bg-white dark:bg-zinc-900/50 border border-zinc-200/50 dark:border-zinc-800/50 hover:border-purple-300 dark:hover:border-purple-500/30 transition-all duration-300 hover:shadow-lg">
-                <div className="flex items-center gap-3 mb-3">
+                <div className={`flex items-center gap-3 mb-3 ${
+                  experience.length % 2 === 0 ? "md:justify-end" : ""
+                }`}>
                   <div className="p-2 rounded-xl bg-purple-50 dark:bg-purple-500/10 text-purple-600 dark:text-purple-400">
                     <GraduationCap size={18} />
                   </div>
                   <span className="text-sm font-medium text-purple-600 dark:text-purple-400">
-                    Education
+                    {education.period}
                   </span>
                 </div>
                 <h3 className="text-lg font-bold text-zinc-900 dark:text-white mb-1">
-                  Bachelor&apos;s in Computer Science
+                  {education.degree}
                 </h3>
+                <p className="text-sm font-medium text-zinc-600 dark:text-zinc-400 mb-2">
+                  {education.institution}
+                </p>
                 <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                  Focused on software engineering, data structures, algorithms,
-                  and artificial intelligence.
+                  {education.focus}
                 </p>
               </div>
             </div>
