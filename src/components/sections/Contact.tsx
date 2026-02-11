@@ -22,14 +22,39 @@ export default function Contact() {
     e.preventDefault();
     setSending(true);
 
-    // Simulate sending — replace with actual API integration (e.g., Formspree, Web3Forms)
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const endpoint = `https://formsubmit.co/ajax/${encodeURIComponent(
+        siteConfig.email
+      )}`;
 
-    setSending(false);
-    setSent(true);
-    setFormState({ name: "", email: "", message: "" });
+      const res = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formState.name,
+          email: formState.email,
+          message: formState.message,
+        }),
+      });
 
-    setTimeout(() => setSent(false), 4000);
+      if (!res.ok) {
+        throw new Error(`Form submission failed: ${res.status}`);
+      }
+
+      setSent(true);
+      setFormState({ name: "", email: "", message: "" });
+      setTimeout(() => setSent(false), 4000);
+    } catch (err) {
+      // keep it simple: log and show a transient failure state
+      // could be enhanced to show a toast or inline error
+      // eslint-disable-next-line no-console
+      console.error(err);
+      alert("Unable to send message right now. Please email " + siteConfig.email);
+    } finally {
+      setSending(false);
+    }
   };
 
   const socialLinks = [
