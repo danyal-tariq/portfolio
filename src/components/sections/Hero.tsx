@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, Download } from "lucide-react";
 import { siteConfig } from "@/lib/constants";
 
 export default function Hero() {
@@ -39,12 +39,14 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.03)_1px,transparent_1px)] bg-[size:64px_64px] dark:bg-[linear-gradient(rgba(99,102,241,0.07)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.07)_1px,transparent_1px)]" />
+      {/* Wireframe background grid */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.07)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.07)_1px,transparent_1px)] bg-[size:64px_64px] dark:bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)]" />
 
-      {/* Gradient Orbs */}
-      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-indigo-500/20 rounded-full blur-[128px] animate-pulse" />
-      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-purple-500/20 rounded-full blur-[128px] animate-pulse delay-1000" />
+      {/* Wireframe corner accents */}
+      <div className="absolute top-0 left-0 w-32 h-32 border-l-2 border-t-2 border-zinc-300 dark:border-zinc-700 pointer-events-none" />
+      <div className="absolute top-0 right-0 w-32 h-32 border-r-2 border-t-2 border-zinc-300 dark:border-zinc-700 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-32 h-32 border-l-2 border-b-2 border-zinc-300 dark:border-zinc-700 pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-32 h-32 border-r-2 border-b-2 border-zinc-300 dark:border-zinc-700 pointer-events-none" />
 
       <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
         {/* Badge */}
@@ -54,10 +56,10 @@ export default function Hero() {
           transition={{ duration: 0.5 }}
           className="mb-8"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-200 dark:border-indigo-500/20 text-indigo-700 dark:text-indigo-300 text-sm font-medium">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 text-sm font-medium font-mono">
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500" />
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-zinc-500 dark:bg-zinc-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-zinc-700 dark:bg-zinc-300" />
             </span>
             Available for opportunities
           </span>
@@ -71,7 +73,7 @@ export default function Hero() {
           className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-zinc-900 dark:text-white mb-6"
         >
           Hi, I&apos;m{" "}
-          <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+          <span className="bg-linear-to-r from-zinc-900 via-zinc-600 to-zinc-900 dark:from-white dark:via-zinc-400 dark:to-white bg-clip-text text-transparent">
             {siteConfig.name.split(" ")[0]}
           </span>
         </motion.h1>
@@ -85,9 +87,7 @@ export default function Hero() {
         >
           <span className="text-xl sm:text-2xl md:text-3xl font-medium text-zinc-600 dark:text-zinc-400">
             {displayText}
-            <span className="animate-pulse text-indigo-600 dark:text-indigo-400">
-              |
-            </span>
+            <span className="animate-pulse text-zinc-900 dark:text-white">|</span>
           </span>
         </motion.div>
 
@@ -114,18 +114,25 @@ export default function Hero() {
                 .querySelector("#projects")
                 ?.scrollIntoView({ behavior: "smooth" })
             }
-            className="group relative px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/25 hover:-translate-y-0.5"
+            className="px-8 py-4 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 rounded-xl font-medium transition-all duration-300 hover:opacity-80 hover:-translate-y-0.5"
           >
             View My Work
-            <span className="absolute inset-0 rounded-xl bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity" />
           </button>
+          <a
+            href="/cv.pdf"
+            download
+            className="inline-flex items-center gap-2 px-8 py-4 border border-zinc-900 dark:border-white text-zinc-900 dark:text-white rounded-xl font-medium hover:bg-zinc-900 hover:text-white dark:hover:bg-white dark:hover:text-zinc-900 transition-all duration-300 hover:-translate-y-0.5"
+          >
+            <Download size={16} />
+            Download CV
+          </a>
           <button
             onClick={() =>
               document
                 .querySelector("#contact")
                 ?.scrollIntoView({ behavior: "smooth" })
             }
-            className="px-8 py-4 border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 rounded-xl font-medium hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all duration-300 hover:-translate-y-0.5"
+            className="px-8 py-4 border border-zinc-300 dark:border-zinc-700 text-zinc-600 dark:text-zinc-400 rounded-xl font-medium hover:border-zinc-900 dark:hover:border-white hover:text-zinc-900 dark:hover:text-white transition-all duration-300 hover:-translate-y-0.5"
           >
             Get In Touch
           </button>
@@ -152,7 +159,7 @@ export default function Hero() {
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-xl bg-zinc-100 dark:bg-zinc-800/50 text-zinc-600 dark:text-zinc-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-500/10 transition-all duration-300 hover:scale-110"
+              className="p-3 rounded-xl border border-zinc-200 dark:border-zinc-800 text-zinc-500 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-white hover:border-zinc-900 dark:hover:border-white transition-all duration-300 hover:scale-110"
               aria-label={label}
             >
               <Icon size={20} />

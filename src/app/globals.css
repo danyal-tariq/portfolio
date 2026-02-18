@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Force dark: variants to use .dark class (not OS media query) */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -8,12 +11,12 @@
 }
 
 :root {
-  --background: #fafafa;
-  --foreground: #18181b;
+  --background: #ffffff;
+  --foreground: #0a0a0a;
 }
 
 .dark {
-  --background: #09090b;
+  --background: #0a0a0a;
   --foreground: #fafafa;
 }
 
@@ -32,7 +35,7 @@ body {
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -40,25 +43,30 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #a1a1aa;
+  background: #d4d4d4;
   border-radius: 9999px;
 }
 
 .dark ::-webkit-scrollbar-thumb {
-  background: #3f3f46;
+  background: #262626;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #71717a;
+  background: #a3a3a3;
 }
 
 .dark ::-webkit-scrollbar-thumb:hover {
-  background: #52525b;
+  background: #404040;
 }
 
 /* Selection color */
 ::selection {
-  background: rgba(99, 102, 241, 0.2);
+  background: rgba(0, 0, 0, 0.12);
+  color: inherit;
+}
+
+.dark ::selection {
+  background: rgba(255, 255, 255, 0.15);
   color: inherit;
 }
 

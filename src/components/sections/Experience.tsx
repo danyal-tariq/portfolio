@@ -13,7 +13,7 @@ export default function Experience() {
   return (
     <SectionWrapper
       id="experience"
-      className="bg-zinc-50/50 dark:bg-zinc-900/20"
+      className="bg-zinc-50 dark:bg-zinc-900/20"
     >
       <div ref={ref}>
         {/* Section Header */}
@@ -21,7 +21,7 @@ export default function Experience() {
           <motion.span
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
-            className="text-indigo-600 dark:text-indigo-400 font-mono text-sm font-medium tracking-wider uppercase"
+            className="text-zinc-500 dark:text-zinc-400 font-mono text-sm font-medium tracking-wider uppercase"
           >
             Career
           </motion.span>
@@ -51,7 +51,7 @@ export default function Experience() {
               }`}
             >
               {/* Timeline Dot */}
-              <div className="absolute left-6 md:left-1/2 w-3 h-3 bg-indigo-600 dark:bg-indigo-400 rounded-full -translate-x-1.5 md:-translate-x-1.5 ring-4 ring-white dark:ring-zinc-950 z-10 top-8" />
+              <div className="absolute left-6 md:left-1/2 w-3 h-3 bg-zinc-900 dark:bg-zinc-100 rounded-full -translate-x-1.5 md:-translate-x-1.5 ring-4 ring-white dark:ring-black z-10 top-8" />
 
               {/* Content */}
               <div
@@ -60,7 +60,7 @@ export default function Experience() {
                 }`}
               >
                 <div
-                  className={`p-6 rounded-2xl bg-white dark:bg-zinc-900/50 border border-zinc-200/50 dark:border-zinc-800/50 hover:border-indigo-300 dark:hover:border-indigo-500/30 transition-all duration-300 hover:shadow-lg ${
+                  className={`p-6 rounded-2xl bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-900 dark:hover:border-zinc-400 transition-all duration-300 hover:shadow-lg ${
                     index % 2 === 0 ? "" : ""
                   }`}
                 >
@@ -69,10 +69,10 @@ export default function Experience() {
                       index % 2 === 0 ? "md:justify-end" : ""
                     }`}
                   >
-                    <div className="p-2 rounded-xl bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400">
+                    <div className="p-2 rounded-xl bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">
                       <Briefcase size={18} />
                     </div>
-                    <span className="text-sm font-medium text-indigo-600 dark:text-indigo-400">
+                    <span className="text-sm font-medium text-zinc-600 dark:text-zinc-400">
                       {exp.period}
                     </span>
                   </div>
@@ -117,19 +117,19 @@ export default function Experience() {
             }`}
           >
             {/* Timeline Dot */}
-            <div className="absolute left-6 md:left-1/2 w-3 h-3 bg-purple-600 dark:bg-purple-400 rounded-full -translate-x-1.5 md:-translate-x-1.5 ring-4 ring-white dark:ring-zinc-950 z-10 top-8" />
+            <div className="absolute left-6 md:left-1/2 w-3 h-3 bg-zinc-500 dark:bg-zinc-400 rounded-full -translate-x-1.5 md:-translate-x-1.5 ring-4 ring-white dark:ring-black z-10 top-8" />
 
             <div className={`ml-16 md:ml-0 md:w-[calc(50%-2rem)] ${
               experience.length % 2 === 0 ? "md:pr-8 md:text-right" : "md:pl-8"
             }`}>
-              <div className="p-6 rounded-2xl bg-white dark:bg-zinc-900/50 border border-zinc-200/50 dark:border-zinc-800/50 hover:border-purple-300 dark:hover:border-purple-500/30 transition-all duration-300 hover:shadow-lg">
+              <div className="p-6 rounded-2xl bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-900 dark:hover:border-zinc-400 transition-all duration-300 hover:shadow-lg">
                 <div className={`flex items-center gap-3 mb-3 ${
                   experience.length % 2 === 0 ? "md:justify-end" : ""
                 }`}>
-                  <div className="p-2 rounded-xl bg-purple-50 dark:bg-purple-500/10 text-purple-600 dark:text-purple-400">
+                  <div className="p-2 rounded-xl bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300">
                     <GraduationCap size={18} />
                   </div>
-                  <span className="text-sm font-medium text-purple-600 dark:text-purple-400">
+                  <span className="text-sm font-medium text-zinc-600 dark:text-zinc-400">
                     {education.period}
                   </span>
                 </div>

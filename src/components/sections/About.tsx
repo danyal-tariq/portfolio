@@ -41,7 +41,7 @@ export default function About() {
           <motion.span
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
-            className="text-indigo-600 dark:text-indigo-400 font-mono text-sm font-medium tracking-wider uppercase"
+            className="text-zinc-500 dark:text-zinc-400 font-mono text-sm font-medium tracking-wider uppercase"
           >
             About Me
           </motion.span>
@@ -77,7 +77,7 @@ export default function About() {
                 Dubai, UAE
               </span>
               . Currently building enterprise-grade full-stack solutions at{" "}
-              <span className="text-indigo-600 dark:text-indigo-400 font-medium">
+              <span className="text-zinc-900 dark:text-white font-medium">
                 Phoenix Group
               </span>
               , where I&apos;ve driven 80%+ cost reductions and 99.9% uptime on
@@ -128,9 +128,9 @@ export default function About() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.4 + i * 0.1 }}
-                className="flex items-center gap-4 p-4 rounded-2xl bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200/50 dark:border-zinc-800/50 hover:border-indigo-300 dark:hover:border-indigo-500/30 transition-colors"
+                className="flex items-center gap-4 p-4 rounded-2xl bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-900 dark:hover:border-zinc-400 transition-colors"
               >
-                <div className="p-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400">
+                <div className="p-2.5 rounded-xl bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">
                   <item.icon size={20} />
                 </div>
                 <div>

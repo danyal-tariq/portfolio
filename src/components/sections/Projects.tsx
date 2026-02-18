@@ -15,28 +15,28 @@ function ProjectCard({ project, index, isInView }: { project: Project; index: nu
       initial={{ opacity: 0, y: 40 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ delay: 0.2 + index * 0.15 }}
-      className="group relative rounded-2xl bg-white dark:bg-zinc-900/50 border border-zinc-200/50 dark:border-zinc-800/50 hover:border-indigo-300 dark:hover:border-indigo-500/30 overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-indigo-500/5"
+      className="group relative rounded-2xl bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-900 dark:hover:border-zinc-400 overflow-hidden transition-all duration-500 hover:shadow-xl"
     >
       {/* Gradient top border */}
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-indigo-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+      <div className="absolute top-0 inset-x-0 h-px bg-linear-to-r from-transparent via-zinc-400 dark:via-zinc-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
       <div className="p-6 sm:p-8">
         {/* Header */}
         <div className="flex items-start justify-between mb-4">
           <div>
-            <h3 className="text-xl font-bold text-zinc-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+            <h3 className="text-xl font-bold text-zinc-900 dark:text-white group-hover:text-zinc-600 dark:group-hover:text-zinc-300 transition-colors">
               {project.title}
             </h3>
             <p className="text-zinc-600 dark:text-zinc-400 mt-2 leading-relaxed">
               {project.description}
             </p>
           </div>
-          <div className="flex gap-2 ml-4 flex-shrink-0">
+          <div className="flex gap-2 ml-4 shrink-0">
             <a
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2.5 rounded-xl bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-500/10 transition-all"
+              className="p-2.5 rounded-xl bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all"
               aria-label="GitHub"
             >
               <Github size={18} />
@@ -46,7 +46,7 @@ function ProjectCard({ project, index, isInView }: { project: Project; index: nu
                 href={project.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-xl bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-500/10 transition-all"
+                className="p-2.5 rounded-xl bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all"
                 aria-label="Live Demo"
               >
                 <ExternalLink size={18} />
@@ -61,7 +61,7 @@ function ProjectCard({ project, index, isInView }: { project: Project; index: nu
             {project.metrics.map((metric) => (
               <span
                 key={metric}
-                className="inline-flex items-center gap-1 px-3 py-1 text-xs font-medium rounded-full bg-indigo-50 dark:bg-indigo-500/10 text-indigo-700 dark:text-indigo-300 border border-indigo-200/50 dark:border-indigo-500/20"
+                className="inline-flex items-center gap-1 px-3 py-1 text-xs font-medium rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-700"
               >
                 <Zap size={10} />
                 {metric}
@@ -102,7 +102,7 @@ function ProjectCard({ project, index, isInView }: { project: Project; index: nu
         {/* Expand/Collapse Toggle */}
         <button
           onClick={() => setExpanded(!expanded)}
-          className="flex items-center gap-1 text-xs font-medium text-zinc-500 dark:text-zinc-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+          className="flex items-center gap-1 text-xs font-medium text-zinc-500 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition-colors"
         >
           {expanded ? (
             <>
@@ -135,7 +135,7 @@ export default function Projects() {
           <motion.span
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
-            className="text-indigo-600 dark:text-indigo-400 font-mono text-sm font-medium tracking-wider uppercase"
+            className="text-zinc-500 dark:text-zinc-400 font-mono text-sm font-medium tracking-wider uppercase"
           >
             Featured Work
           </motion.span>
@@ -172,7 +172,7 @@ export default function Projects() {
             >
               <button
                 onClick={() => setShowAll(!showAll)}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 text-sm font-medium hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:border-indigo-300 dark:hover:border-indigo-500/30 transition-all"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 text-sm font-medium hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:border-zinc-900 dark:hover:border-zinc-400 transition-all"
               >
                 {showAll ? "Show Less" : `View ${otherProjects.length} More Projects`}
                 {showAll ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
@@ -198,15 +198,15 @@ export default function Projects() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: index * 0.1 }}
-                        className="group p-5 rounded-xl bg-white dark:bg-zinc-900/50 border border-zinc-200/50 dark:border-zinc-800/50 hover:border-indigo-300 dark:hover:border-indigo-500/30 transition-all duration-300 hover:shadow-lg"
+                        className="group p-5 rounded-xl bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-900 dark:hover:border-zinc-400 transition-all duration-300 hover:shadow-lg"
                       >
                         <div className="flex items-center justify-between mb-3">
-                          <h4 className="font-semibold text-zinc-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                          <h4 className="font-semibold text-zinc-900 dark:text-white group-hover:text-zinc-600 dark:group-hover:text-zinc-300 transition-colors">
                             {project.title}
                           </h4>
                           <Github
                             size={16}
-                            className="text-zinc-400 group-hover:text-indigo-500 transition-colors"
+                            className="text-zinc-400 group-hover:text-zinc-700 dark:group-hover:text-zinc-300 transition-colors"
                           />
                         </div>
                         <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-3 line-clamp-2">
