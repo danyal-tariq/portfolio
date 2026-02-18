@@ -119,8 +119,9 @@ export default function Hero() {
             View My Work
           </button>
           <a
-            href="/cv.pdf"
-            download
+            href="https://flowcv.com/resume/dtocukojqh"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-4 border border-zinc-900 dark:border-white text-zinc-900 dark:text-white rounded-xl font-medium hover:bg-zinc-900 hover:text-white dark:hover:bg-white dark:hover:text-zinc-900 transition-all duration-300 hover:-translate-y-0.5"
           >
             <Download size={16} />
