@@ -64,8 +64,9 @@ export default function Navbar() {
 
           {/* Download CV */}
           <a
-            href="/cv.pdf"
-            download
+            href="https://flowcv.com/resume/dtocukojqh"
+            target="_blank"
+            rel="noopener noreferrer"
             className="ml-2 inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium rounded-lg border border-zinc-900 dark:border-zinc-100 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-900 hover:text-white dark:hover:bg-zinc-100 dark:hover:text-zinc-900 transition-all duration-200"
           >
             <Download size={14} />
